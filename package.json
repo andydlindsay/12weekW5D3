@@ -1,0 +1,15 @@
+{
+  "name": "w05d03",
+  "version": "1.0.0",
+  "description": "### To Do - [ ] Create a database and query it using `psql` terminal - [ ] Perform `BREAD` actions on database from command line - [ ] Perform `BREAD` actions on database from the browser",
+  "main": "command-line.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.12.1"
+  }
+}
