@@ -12,6 +12,21 @@ router.get('/', (request, response) => {
   });
 });
 
+// add
+router.get('/new', (request, response) => {
+  response.render('new-villain');
+});
+
+router.post('/', (request, response) => {
+  const { alias, movie } = request.body;
+  addVillain(alias, movie, (err) => {
+    if (err) {
+      return response.render('error', err);
+    }
+    response.redirect('/villains');
+  });
+});
+
 // read
 router.get('/:id', (request, response) => {
   getVillainById(request.params.id, (err, villain) => {
@@ -30,21 +45,6 @@ router.post('/:id', (request, response) => {
       return response.render('error', err);
     }
     response.redirect(`/villains/${id}`);
-  });
-});
-
-// add
-router.get('/new', (request, response) => {
-  response.render('new-villain');
-});
-
-router.post('/', (request, response) => {
-  const { alias, movie } = request.body;
-  addVillain(alias, movie, (err) => {
-    if (err) {
-      return response.render('error', err);
-    }
-    response.redirect('/villains');
   });
 });
 

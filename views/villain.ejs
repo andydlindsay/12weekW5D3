@@ -11,5 +11,12 @@
   <h1>One Villain (more than enough)</h1>
   <h2>Alias: <%= alias %></h2>
   <h2>Movie: <%= movie %></h2>
+  <h2>Edit Villain</h2>
+  <form method="POST" action="/villains/<%= id %>">
+  <label for="new-alias">New Alias</label>
+  <input type="text" id="new-alias" name="newAlias" />
+  <br />
+  <button type="submit">Edit Villain</button>
+  </form>
 </body>
 </html>
